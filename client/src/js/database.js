@@ -11,7 +11,7 @@ const initdb = async () =>
       console.log('jate database created');
     },
   });
-
+// This method accepts the content and adds it to the database
 export const putDb = async (content) => {
   const jateDB = await openDB("jate", 1);
   const tx = jateDB.transaction("jate", "readwrite");
@@ -20,7 +20,7 @@ export const putDb = async (content) => {
   const result = await request;
   console.log("Data saved to the database", result);
 };
-
+// this method gets all the content from the database
 export const getDb = async () => {
   const jateDB = await openDB("jate", 1);
   const tx = jateDB.transaction("jate", "readonly");
